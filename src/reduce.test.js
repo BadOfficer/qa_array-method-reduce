@@ -11,9 +11,7 @@ describe('reduce', () => {
     delete Array.prototype.reduce2;
   });
 
-  it('should ', () => {
-
-  });
+  it('should ', () => {});
 
   // Add tests here
 });
