@@ -17,6 +17,14 @@ describe('reduce', () => {
     delete Array.prototype.reduce2;
   });
 
+  it('should throw an error if callback is not a function', () => {
+    const testArr = [1, 2, 3];
+
+    const res = () => testArr.reduce2(null, 1);
+
+    expect(res).toThrow(TypeError);
+  });
+
   it('should call cb for each value', () => {
     const testArr = [1, 2, 3];
 
