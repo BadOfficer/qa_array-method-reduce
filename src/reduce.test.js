@@ -53,14 +53,15 @@ describe('reduce', () => {
   it('should work with empty array without start value', () => {
     const testArr = [];
 
-    const result = testArr.reduce2(callback);
+    const result = () => testArr.reduce2(callback);
 
     expect(callback).toHaveBeenCalledTimes(0);
-    expect(result).toBeUndefined();
+    expect(result).toThrow(TypeError);
   });
 
   it('should work with one item', () => {
     const testArr = [1];
+
     callback.mockReturnValue(2);
 
     const result = testArr.reduce2(callback, 1);
